@@ -22,3 +22,11 @@ model User {
 
   @@map("users")
 }
+
+model Tag {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+
+  @@map("categories")
+}

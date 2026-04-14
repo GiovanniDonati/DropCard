@@ -1,7 +1,7 @@
 import { prisma } from "../config/prisma";
 import { User } from "../domain/entities/user.entity";
 import { CreateUserDto, UpdateUserDto } from "../domain/dto/user.dto";
-import { Permission, Status } from "../domain/entities/enums";
+import { Status } from "../domain/entities/enums";
 
 export class UserRepository {
   async findAll(): Promise<User[]> {

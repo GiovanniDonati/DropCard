@@ -24,11 +24,12 @@ model User {
 }
 
 model Tag {
-  id        String   @id @default(uuid())
-  name      String   @unique
-  createdAt DateTime @default(now())
+  id        String    @id @default(uuid())
+  name      String    @unique
+  createdAt DateTime  @default(now())
+  cardTags  CardTag[]
 
-  @@map("categories")
+  @@map("tags")
 }
 
 model Collection {
@@ -36,6 +37,36 @@ model Collection {
   name      String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  cards     Card[]
 
   @@map("collections")
+}
+
+model Card {
+  id             String     @id @default(uuid())
+  frontside      String
+  backside       String
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  lastReviewedAt DateTime?
+  nextReviewAt   DateTime?
+  ease_factor    Float      @default(2.5)
+  interval       Int        @default(0)
+  repetition     Int        @default(0)
+  collectionId   String
+  collection     Collection @relation(fields: [collectionId], references: [id])
+  cardTags       CardTag[]
+
+  @@map("cards")
+}
+
+model CardTag {
+  id     String @id @default(uuid())
+  cardId String
+  tagId  String
+
+  card Card @relation(fields: [cardId], references: [id])
+  tag  Tag  @relation(fields: [tagId], references: [id])
+
+  @@map("card_tags")
 }

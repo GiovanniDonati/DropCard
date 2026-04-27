@@ -15,7 +15,8 @@ App para formular flashcards de estudos, inicialmente um sistema web, voltado a 
 - Tela para criar flashcards, podendo selecionar as categorias.
 
 ## Futuras Feactures
-- Colocar a posibilidade de adicionar pdf com criação de flashcards automáticos.
+- Colocar a possibilidade de adicionar pdf com criação de flashcards automáticos.
+- Solicitar a IA para gerar flashcards especificos sobre um assunto.
 - Fazer estilo playlist, aonde é possível compartilhar as coleções de flashcards.
 
 

@@ -4,6 +4,7 @@ import { userRoutes } from './user.route';
 import { tagRoutes } from './tag.route';
 import { collectionRoutes } from './collection.route';
 import { cardRoutes } from './card.route';
+import { deckRoutes } from './deck.route';
 
 const rootRouter: Router = Router();
 
@@ -12,5 +13,6 @@ rootRouter.use('/users', userRoutes);
 rootRouter.use('/tags', tagRoutes);
 rootRouter.use('/collections', collectionRoutes);
 rootRouter.use('/cards', cardRoutes);
+rootRouter.use('/decks', deckRoutes);
 
 export default rootRouter;
